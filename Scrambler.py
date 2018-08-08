@@ -1,6 +1,6 @@
 from numpy import random
 import Cube
-
+import image_output
 
 def alg(n):
 
@@ -73,7 +73,8 @@ def scrambler(n):
             else:
                 cube.b()
 
-    print (cube)
+    #print (str(cube))
+    image_output.image((str(cube)))
 
 def main():
 
