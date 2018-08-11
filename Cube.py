@@ -6,7 +6,7 @@ class Center_block:
         self.colour = colour
 
     def __str__(self):
-        return self.colour + " "
+        return self.colour
 
 class Corner_block:
 
@@ -15,11 +15,11 @@ class Corner_block:
         self.orientation = orientation
 
     def get_colour(self, pos):
-        return self.colour[(pos + self.orientation) % 3] + " "
+        return self.colour[(pos + self.orientation) % 3]
 
     def __str__(self):
-        return self.colour + " "
-
+        return self.colour
+        
 class Edge_block:
 
     def __init__(self, colour, orientation):
@@ -27,10 +27,10 @@ class Edge_block:
         self.orientation = orientation
 
     def get_colour(self, pos):
-        return self.colour[(pos + self.orientation) % 2] + " "
+        return self.colour[(pos + self.orientation) % 2]
 
     def __str__(self):
-        return self.colour + " "
+        return self.colour
 
 class Cube:
 
@@ -190,10 +190,10 @@ class Cube:
 
     def __str__(self):
 
-        w_face = "      " + self.cube[(-1, -1, 1)].get_colour(0) + self.cube[(-1, 0, 1)].get_colour(0) + self.cube[(-1, 1, 1)].get_colour(0) + "\n      " + self.cube[(0, -1, 1)].get_colour(0) + str(self.cube[(0, 0, 1)]) + self.cube[(0, 1, 1)].get_colour(0) + "\n      " + self.cube[(1, -1, 1)].get_colour(0) + self.cube[(1, 0, 1)].get_colour(0) + self.cube[(1, 1, 1)].get_colour(0) + "\n"
-        w_edge = self.cube[(-1, -1, 1)].get_colour(1) + self.cube[(0, -1, 1)].get_colour(1) + self.cube[(1, -1, 1)].get_colour(2) + self.cube[(1, -1, 1)].get_colour(1) + self.cube[(1, 0, 1)].get_colour(1) + self.cube[(1, 1, 1)].get_colour(2) + self.cube[(1, 1, 1)].get_colour(1) + self.cube[(0, 1, 1)].get_colour(1) + self.cube[(-1, 1, 1)].get_colour(2) + self.cube[(-1, 1, 1)].get_colour(1) + self.cube[(-1, 0, 1)].get_colour(1) + self.cube[(-1, -1, 1)].get_colour(2) + "\n"
-        middle = self.cube[(-1, -1, 0)].get_colour(0) + str(self.cube[(0, -1, 0)]) + self.cube[(1, -1, 0)].get_colour(0) + self.cube[(1, -1, 0)].get_colour(1) + str(self.cube[(1, 0, 0)]) + self.cube[(1, 1, 0)].get_colour(1) + self.cube[(1, 1, 0)].get_colour(0) + str(self.cube[(0, 1, 0)]) + self.cube[(-1, 1, 0)].get_colour(0) + self.cube[(-1, 1, 0)].get_colour(1) + str(self.cube[(-1, 0, 0)]) + self.cube[(-1, -1, 0)].get_colour(1) + "\n"
-        y_edge = self.cube[(-1, -1, -1)].get_colour(2) + self.cube[(0, -1, -1)].get_colour(1) + self.cube[(1, -1, -1)].get_colour(1) + self.cube[(1, -1, -1)].get_colour(2) + self.cube[(1, 0, -1)].get_colour(1) + self.cube[(1, 1, -1)].get_colour(1) + self.cube[(1, 1, -1)].get_colour(2) + self.cube[(0, 1, -1)].get_colour(1) + self.cube[(-1, 1, -1)].get_colour(1) + self.cube[(-1, 1, -1)].get_colour(2) + self.cube[(-1, 0, -1)].get_colour(1) + self.cube[(-1, -1, -1)].get_colour(1) + "\n"
-        y_face = "      " + self.cube[(1, -1, -1)].get_colour(0) + self.cube[(1, 0, -1)].get_colour(0) + self.cube[(1, 1, -1)].get_colour(0) + "\n      " + self.cube[(0, -1, -1)].get_colour(0) + str(self.cube[(0, 0, -1)]) + self.cube[(0, 1, -1)].get_colour(0) + "\n      " + self.cube[(-1, -1, -1)].get_colour(0) + self.cube[(-1, 0, -1)].get_colour(0) + self.cube[(-1, 1, -1)].get_colour(0) + "\n"
+        w_face = self.cube[(-1, -1, 1)].get_colour(0) + self.cube[(-1, 0, 1)].get_colour(0) + self.cube[(-1, 1, 1)].get_colour(0) + self.cube[(0, -1, 1)].get_colour(0) + str(self.cube[(0, 0, 1)]) + self.cube[(0, 1, 1)].get_colour(0) + self.cube[(1, -1, 1)].get_colour(0) + self.cube[(1, 0, 1)].get_colour(0) + self.cube[(1, 1, 1)].get_colour(0)
+        w_edge = self.cube[(-1, -1, 1)].get_colour(1) + self.cube[(0, -1, 1)].get_colour(1) + self.cube[(1, -1, 1)].get_colour(2) + self.cube[(1, -1, 1)].get_colour(1) + self.cube[(1, 0, 1)].get_colour(1) + self.cube[(1, 1, 1)].get_colour(2) + self.cube[(1, 1, 1)].get_colour(1) + self.cube[(0, 1, 1)].get_colour(1) + self.cube[(-1, 1, 1)].get_colour(2) + self.cube[(-1, 1, 1)].get_colour(1) + self.cube[(-1, 0, 1)].get_colour(1) + self.cube[(-1, -1, 1)].get_colour(2)
+        middle = self.cube[(-1, -1, 0)].get_colour(0) + str(self.cube[(0, -1, 0)]) + self.cube[(1, -1, 0)].get_colour(0) + self.cube[(1, -1, 0)].get_colour(1) + str(self.cube[(1, 0, 0)]) + self.cube[(1, 1, 0)].get_colour(1) + self.cube[(1, 1, 0)].get_colour(0) + str(self.cube[(0, 1, 0)]) + self.cube[(-1, 1, 0)].get_colour(0) + self.cube[(-1, 1, 0)].get_colour(1) + str(self.cube[(-1, 0, 0)]) + self.cube[(-1, -1, 0)].get_colour(1)
+        y_edge = self.cube[(-1, -1, -1)].get_colour(2) + self.cube[(0, -1, -1)].get_colour(1) + self.cube[(1, -1, -1)].get_colour(1) + self.cube[(1, -1, -1)].get_colour(2) + self.cube[(1, 0, -1)].get_colour(1) + self.cube[(1, 1, -1)].get_colour(1) + self.cube[(1, 1, -1)].get_colour(2) + self.cube[(0, 1, -1)].get_colour(1) + self.cube[(-1, 1, -1)].get_colour(1) + self.cube[(-1, 1, -1)].get_colour(2) + self.cube[(-1, 0, -1)].get_colour(1) + self.cube[(-1, -1, -1)].get_colour(1)
+        y_face = self.cube[(1, -1, -1)].get_colour(0) + self.cube[(1, 0, -1)].get_colour(0) + self.cube[(1, 1, -1)].get_colour(0) + self.cube[(0, -1, -1)].get_colour(0) + str(self.cube[(0, 0, -1)]) + self.cube[(0, 1, -1)].get_colour(0) + self.cube[(-1, -1, -1)].get_colour(0) + self.cube[(-1, 0, -1)].get_colour(0) + self.cube[(-1, 1, -1)].get_colour(0)
 
         return w_face + w_edge + middle + y_edge + y_face

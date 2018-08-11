@@ -79,9 +79,9 @@ def scrambler(n):
 def main():
 
     print ("Rubik's Cube scrambler by Ching, input the length of random algorithm you want and the resulting cube will be shown\nThis scrambler assume the use of Western color sheme with white face to the top and blue to the player")
-    cube2 = Cube.Cube()
-    print ("Basic orientation:")
-    print (cube2)
+    #cube2 = Cube.Cube()
+    #print ("Basic orientation:")
+    #print (cube2)
     
     moves = input("Please input the number of steps you want the crambler to have: ")
     print ("For the meaning of algorithm, please refer to: \nhttp://w.astro.berkeley.edu/~converse/rubiks.php?id1=basics&id2=notation")
