@@ -2,13 +2,11 @@ from numpy import random
 import Cube
 import image_output
 
-def alg(n):
+def alg(algor_list, n):
 
     move = [["R","L"], ["U","D"], ["F","B"]]
     direction = [" ","'","2"]
-
     algorithm = ""
-    algor_list = []
     parallel = False
     prevMove = "A"
     prevY = 0
@@ -25,7 +23,7 @@ def alg(n):
         elif newMove in move[prevY]:
             if not parallel:
                 algor_list.append(newMove + direction[random.randint(3)])
-                algorithm += algor_list[-1] + " "
+                algorithm += algor_list[-1] + ", "
                 prevMove = newMove
                 prevY = y
                 parallel = True
@@ -33,17 +31,17 @@ def alg(n):
 
         else:
             algor_list.append(newMove + direction[random.randint(3)])
-            algorithm += algor_list[-1] + " "
+            algorithm += algor_list[-1] + ", "
             prevMove = newMove
             prevY = y
             parallel = False
             i += 1
 
-    print (algorithm + "\n")
-    return algor_list
+    return algorithm[:-2]
 
 def scrambler(n):
-    algor_list = alg(n)
+    algor_list = []
+    algor = alg(algor_list, n)
     cube = Cube.Cube()
 
     for x in algor_list:
@@ -74,7 +72,7 @@ def scrambler(n):
                 cube.b()
 
     #print (str(cube))
-    image_output.image((str(cube)))
+    image_output.image(str(cube), algor)
 
 def main():
 
