@@ -1,5 +1,5 @@
 from numpy import random
-import Cube
+from cube import Cube
 import image_output
 
 def alg(algor_list, n):
@@ -38,6 +38,7 @@ def alg(algor_list, n):
             i += 1
 
     return algorithm[:-2]
+
 
 def scrambler(n):
     algor_list = []
